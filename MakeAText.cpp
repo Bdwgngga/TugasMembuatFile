@@ -58,3 +58,32 @@ void readFile(){
 	}
 	
 }
+
+void menuFile() {
+    int pilihan;
+    cout<<"\nPilihan pengolahan file  "<<endl;
+    cout<<"1. Membuat dan input data ke file  "<<endl;
+    cout<<"2. Membaca data file  "<<endl;
+    cout<<"Masukan pilihan : ";
+    cin>>pilihan;
+
+    if(pilihan==1) {
+        createFile();
+    }
+    if(pilihan==2) {
+        readFile();
+    }
+}
+
+int main() {
+    int ulang;
+    do {
+        menuFile();
+        cout<<"\nIngin ulang input data Yes(1) No(0) ";
+        cin>>ulang;
+        cout<<endl;
+    } while (ulang==1);
+    cout<<"Terima kasih...";
+    cout<<endl;
+    return 0;
+}
