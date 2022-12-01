@@ -8,39 +8,38 @@ using namespace std;
  void createFile() { // Untuk Membuat Fungsi createfile
     char nama[6], npm[8], kelas[5], jurusan[2]; // Mmebuat Variable bertipe data (character)
     string  namaFile; //Membuat Variable bertipe data (string)
-    int j ; //Membuat Variable bertipe data Integer
+    int j ; \\Membuat Variable bertipe data Integer
     char charNama[20];	    //Membuat Variable bertipe data character
-    FILE *fileTemp; //berfungsi agar file menyimpan semua inputan.
+    FILE *fileTemp;
 
-    namaFile = "biodata.txt"; //Memberikan nama file dan ekstensi file yang dibuat yaitu biodata.txt
-    strcpy(charNama, namaFile.c_str());//Berfungsi untuk menkonversikan variable namafile dari bertipe string menjadi char
+    namaFile = "biodata.txt";
+    strcpy(charNama, namaFile.c_str());
 
-    fileTemp = fopen(charNama, "w"); // digunakan untuk membuka file sesuai nama yang di inputkan user yang tersimpan pada variable charNama
-	 
+    fileTemp = fopen(charNama, "w");
     fprintf(fileTemp, "====================== BIODATA ======================\n");
     fprintf(fileTemp, "|    Nama    |    NPM    |    KELAS   |   JURUSAN   |");
-	 //Sebagai Headers file
     
     printf("\nMasukan Banyak Inputan : ");
-    cin>>j; //Meminta banyak data yang akan disimpan pada file lalu menyimpan pada variable j
-    for (int i=0; i<j; i++) { //Sebagai perulangan agar dapat memasukan data sebanyak yang akan input pada file
-        printf("\n========== Masukan data ke-%d ==========", i+1); //Headers
+    cin>>j;
+
+    for (int i=0; i<j; i++) {
+        printf("\n========== Masukan data ke-%d ==========", i+1);
         printf("\nMasukan Nama  : ");
-        cin>>nama;//Meminta inputan nama dan menyimpan pada variable nama
+        cin>>nama;
         printf("Masukan NPM   : ");
-        cin>>npm;//Meminta inputan nama dan menyimpan pada variable npm
+        cin>>npm;
         printf("Masukan Kelas : ");;
-        cin>>kelas;//Meminta inputan nama dan menyimpan pada variable kelas
+        cin>>kelas;
         printf("Masukan Jurusan : ");;
-        cin>>jurusan;//Meminta inputan nama dan menyimpan pada variable jurusan
-        fprintf(fileTemp, "\n|   ""%s", nama ); // Untuk memasukan nilai yang tersimpan pada variable nama ke dalam file 
-        fprintf(fileTemp, "   |  ""%s", npm);	// Untuk memasukan nilai yang tersimpan pada variable npm ke dalam file 
-        fprintf(fileTemp, " |    ""%s", kelas);    // Untuk memasukan nilai yang tersimpan pada variable kelas ke dalam file 
-        fprintf(fileTemp, "   |     ""%s", jurusan); // Untuk memasukan nilai yang tersimpan pada variable jurusan ke dalam file 
+        cin>>jurusan;
+        fprintf(fileTemp, "\n|   ""%s", nama );
+        fprintf(fileTemp, "   |  ""%s", npm);
+        fprintf(fileTemp, " |    ""%s", kelas);
+        fprintf(fileTemp, "   |     ""%s", jurusan);
         fprintf(fileTemp, "      |");
     }
-    fprintf(fileTemp, "\n====================================================="); // Sebagai Footers file
-    fclose(fileTemp); // Untuk Menutup File
+    fprintf(fileTemp, "\n=====================================================");
+    fclose(fileTemp);
 
     
 }
@@ -60,30 +59,30 @@ void readFile(){
 	
 }
 
-void menuFile() {
+void menuFile() { // Digunakan untuk membuat menu
     int pilihan;
     cout<<"\nPilihan pengolahan file  "<<endl;
     cout<<"1. Membuat dan input data ke file  "<<endl;
     cout<<"2. Membaca data file  "<<endl;
     cout<<"Masukan pilihan : ";
-    cin>>pilihan;
+    cin>>pilihan; //Untuk menyimpan data pilihan yang telah diinput
 
     if(pilihan==1) {
-        createFile();
+        createFile(); // Ketika user menginputkan angka 1 maka program akan memanggil fungsi createfile
     }
     if(pilihan==2) {
-        readFile();
+        readFile();  // Ketika user menginputkan angka 1 maka program akan memanggil fungsi readfile
     }
 }
 
-int main() {
+int main() {  //fungsi main yang pertama kali dijalankan ketika program dijalankan
     int ulang;
     do {
-        menuFile();
+        menuFile(); //perulangan do dengan pemanggilan fungsi menufile
         cout<<"\nIngin ulang input data Yes(1) No(0) ";
-        cin>>ulang;
+        cin>>ulang; // Untuk menyimpan data pilihan yang telah diinput
         cout<<endl;
-    } while (ulang==1);
+    } while (ulang==1); // Kondisi dimana ketika user memasukkan angka 1 maka program akan selesai dan akan mencetak Terima Kasih.
     cout<<"Terima kasih...";
     cout<<endl;
     return 0;
