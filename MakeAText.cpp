@@ -57,11 +57,11 @@ void readFile(){
 }
 
 void menuFile() { // Digunakan untuk membuat menu
-    int pilihan;
-    cout<<"\nPilihan pengolahan file  "<<endl;
-    cout<<"1. Membuat dan input data ke file  "<<endl;
-    cout<<"2. Membaca data file  "<<endl;
-    cout<<"Masukan pilihan : ";
+    int pilihan; // variabel dengan tipe data integer
+    cout<<"\nPilihan pengolahan file  "<<endl; // menampilkan judul menu
+    cout<<"1. Membuat dan input data ke file  "<<endl; // menampilkan pilihan menu
+    cout<<"2. Membaca data file  "<<endl; // menampilkan pilihan menu
+    cout<<"Masukan pilihan : "; // untuk meminta data atau inputan
     cin>>pilihan; //Untuk menyimpan data pilihan yang telah diinput
 
     if(pilihan==1) {
@@ -73,14 +73,14 @@ void menuFile() { // Digunakan untuk membuat menu
 }
 
 int main() {  //fungsi main yang pertama kali dijalankan ketika program dijalankan
-    int ulang;
-    do {
+    int ulang; // variabel dengan tipe data integer
+    do { // prulangan do
         menuFile(); //perulangan do dengan pemanggilan fungsi menufile
         cout<<"\nIngin ulang input data Yes(1) No(0) ";
         cin>>ulang; // Untuk menyimpan data pilihan yang telah diinput
         cout<<endl;
-    } while (ulang==1); // Kondisi dimana ketika user memasukkan angka 1 maka program akan selesai dan akan mencetak Terima Kasih.
-    cout<<"Terima kasih...";
+    } while (ulang==1); // Kondisi dimana ketika user memasukkan angka 0 maka program akan selesai dan akan mencetak Terima Kasih.
+    cout<<"Terima kasih..."; // menampilkan terima kasih
     cout<<endl;
     return 0;
 }
