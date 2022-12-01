@@ -46,10 +46,7 @@ using namespace std;
 }
 
 void readFile(){
-	char filesaya{20};
 	string line;
-	cout<<"Masukan Nama File : ";
-	cin>>filesaya;
 	ifstream myfile;
 	myfile.open("biodata.txt");
 	if(myfile.is_open()){
