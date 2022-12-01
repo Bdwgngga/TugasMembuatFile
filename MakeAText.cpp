@@ -5,11 +5,11 @@
 
 using namespace std;
 
- void createFile() {
-    char nama[6], npm[8], kelas[5], jurusan[2];
-    string  namaFile;
-    int j ;
-    char charNama[20];
+ void createFile() { \\ Untuk Membuat Fungsi createfile
+    char nama[6], npm[8], kelas[5], jurusan[2]; \\ Mmebuat Variable bertipe data (character)
+    string  namaFile; \\Membuat Variable bertipe data (string)
+    int j ; \\Membuat Variable bertipe data Integer
+    char charNama[20];	    \\Membuat Variable bertipe data character
     FILE *fileTemp;
 
     namaFile = "biodata.txt";
